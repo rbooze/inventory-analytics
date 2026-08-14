@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="700" viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Background -->
+  <rect x="0" y="0" width="1200" height="700" fill="#0b1120" />
+
+  <!-- Title -->
+  <text x="600" y="60" text-anchor="middle" fill="#e5e7eb" font-size="28" font-family="Segoe UI, sans-serif">
+    Inventory Analytics Platform - System Architecture
+  </text>
+
+  <!-- Box style variables (conceptual) -->
+  <!-- Source Systems -->
+  <rect x="80" y="120" width="260" height="90" rx="10" fill="#1f2937" stroke="#60a5fa" stroke-width="2" />
+  <text x="210" y="150" text-anchor="middle" fill="#f9fafb" font-size="18" font-family="Segoe UI, sans-serif">
+    Source Systems
+  </text>
+  <text x="210" y="175" text-anchor="middle" fill="#9ca3af" font-size="13" font-family="Segoe UI, sans-serif">
+    Inventory, Sales, Supplier,
+  </text>
+  <text x="210" y="195" text-anchor="middle" fill="#9ca3af" font-size="13" font-family="Segoe UI, sans-serif">
+    Manufacturing, Logistics
+  </text>
+
+  <!-- Staging Layer -->
+  <rect x="80" y="260" width="260" height="90" rx="10" fill="#1f2937" stroke="#34d399" stroke-width="2" />
+  <text x="210" y="290" text-anchor="middle" fill="#f9fafb" font-size="18" font-family="Segoe UI, sans-serif">
+    Staging Layer (SQL)
+  </text>
+  <text x="210" y="315" text-anchor="middle" fill="#9ca3af" font-size="13" font-family="Segoe UI, sans-serif">
+    Raw stg_* tables
+  </text>
+
+  <!-- Transformation Layer -->
+  <rect x="80" y="400" width="260" height="90" rx="10" fill="#1f2937" stroke="#f97316" stroke-width="2" />
+  <text x="210" y="430" text-anchor="middle" fill="#f9fafb" font-size="18" font-family="Segoe UI, sans-serif">
+    Transformation Layer
+  </text>
+  <text x="210" y="455" text-anchor="middle" fill="#9ca3af" font-size="13" font-family="Segoe UI, sans-serif">
+    Cleansing, keys, business rules
+  </text>
+
+  <!-- Data Warehouse -->
+  <rect x="470" y="260" width="260" height="90" rx="10" fill="#1f2937" stroke="#a855f7" stroke-width="2" />
+  <text x="600" y="290" text-anchor="middle" fill="#f9fafb" font-size="18" font-family="Segoe UI, sans-serif">
+    SQL Data Warehouse
+  </text>
+  <text x="600" y="315" text-anchor="middle" fill="#9ca3af" font-size="13" font-family="Segoe UI, sans-serif">
+    Dim* and Fact* star schema
+  </text>
+
+  <!-- Power BI Semantic Model -->
+  <rect x="860" y="260" width="260" height="90" rx="10" fill="#1f2937" stroke="#22c55e" stroke-width="2" />
+  <text x="990" y="290" text-anchor="middle" fill="#f9fafb" font-size="18" font-family="Segoe UI, sans-serif">
+    Power BI Semantic Model
+  </text>
+  <text x="990" y="315" text-anchor="middle" fill="#9ca3af" font-size="13" font-family="Segoe UI, sans-serif">
+    Relationships, DAX, folders
+  </text>
+
+  <!-- Dashboards & Insights -->
+  <rect x="860" y="400" width="260" height="90" rx="10" fill="#1f2937" stroke="#facc15" stroke-width="2" />
+  <text x="990" y="430" text-anchor="middle" fill="#f9fafb" font-size="18" font-family="Segoe UI, sans-serif">
+    Dashboards & Insights
+  </text>
+  <text x="990" y="455" text-anchor="middle" fill="#9ca3af" font-size="13" font-family="Segoe UI, sans-serif">
+    Executive, Inventory, Supplier,
+  </text>
+  <text x="990" y="475" text-anchor="middle" fill="#9ca3af" font-size="13" font-family="Segoe UI, sans-serif">
+    Manufacturing, Logistics
+  </text>
+
+  <!-- ETL & Flow Arrows -->
+  <!-- Source → Staging -->
+  <line x1="210" y1="210" x2="210" y2="260" stroke="#e5e7eb" stroke-width="2" marker-end="url(#arrow)" />
+  <!-- Staging → Transformation -->
+  <line x1="210" y1="350" x2="210" y2="400" stroke="#e5e7eb" stroke-width="2" marker-end="url(#arrow)" />
+  <!-- Transformation → Warehouse -->
+  <line x1="340" y1="445" x2="470" y2="305" stroke="#e5e7eb" stroke-width="2" marker-end="url(#arrow)" />
+  <!-- Warehouse → Power BI Model -->
+  <line x1="730" y1="305" x2="860" y2="305" stroke="#e5e7eb" stroke-width="2" marker-end="url(#arrow)" />
+  <!-- Power BI Model → Dashboards -->
+  <line x1="990" y1="350" x2="990" y2="400" stroke="#e5e7eb" stroke-width="2" marker-end="url(#arrow)" />
+
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L6,3 z" fill="#e5e7eb" />
+    </marker>
+  </defs>
+
+  <!-- Legend -->
+  <rect x="470" y="400" width="260" height="150" rx="10" fill="#111827" stroke="#4b5563" stroke-width="1" />
+  <text x="600" y="430" text-anchor="middle" fill="#e5e7eb" font-size="16" font-family="Segoe UI, sans-serif">
+    Legend
+  </text>
+  <circle cx="500" cy="455" r="6" fill="#60a5fa" />
+  <text x="515" y="460" fill="#9ca3af" font-size="13" font-family="Segoe UI, sans-serif">
+    Source Systems
+  </text>
+  <circle cx="500" cy="480" r="6" fill="#34d399" />
+  <text x="515" y="485" fill="#9ca3af" font-size="13" font-family="Segoe UI, sans-serif">
+    Staging / Raw SQL
+  </text>
+  <circle cx="500" cy="505" r="6" fill="#f97316" />
+  <text x="515" y="510" fill="#9ca3af" font-size="13" font-family="Segoe UI, sans-serif">
+    ETL Transformations
+  </text>
+  <circle cx="500" cy="530" r="6" fill="#a855f7" />
+  <text x="515" y="535" fill="#9ca3af" font-size="13" font-family="Segoe UI, sans-serif">
+    SQL Data Warehouse
+  </text>
+  <circle cx="500" cy="555" r="6" fill="#22c55e" />
+  <text x="515" y="560" fill="#9ca3af" font-size="13" font-family="Segoe UI, sans-serif">
+    Power BI Model
+  </text>
+  <circle cx="500" cy="580" r="6" fill="#facc15" />
+  <text x="515" y="585" fill="#9ca3af" font-size="13" font-family="Segoe UI, sans-serif">
+    Dashboards & Insights
+  </text>
+
+</svg>
